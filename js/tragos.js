@@ -19,7 +19,7 @@ function renderDrinks(){
   const grid = document.getElementById("drinkGrid");
   grid.innerHTML = drinks.map(([slug,name]) => `
     <article class="drink">
-      <img src="img/tragos/${slug}.svg" alt="${name}" loading="lazy">
+      <img src="img/tragos/${slug}.png" alt="${name}" loading="lazy">
       <strong>${name}</strong>
     </article>
   `).join("");
