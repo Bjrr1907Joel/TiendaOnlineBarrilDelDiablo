@@ -4,24 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#050505">
-  <title>Productos | El Barril del Diablo</title>
+  <title>Tienda 2.0 | El Barril del Diablo</title>
   <link rel="stylesheet" href="css/tienda.css">
 </head>
 <body>
 <header class="topbar">
   <a href="index.html" class="back">‹ Volver</a>
-  <div><h1>EL BARRIL DEL DIABLO</h1><p>Selecciona productos para tu pedido</p></div>
+  <div>
+    <h1>EL BARRIL DEL DIABLO</h1>
+    <p>Tienda virtual 2.0 · sin precios</p>
+  </div>
   <button id="openCart" class="cart-button">🛒 <span id="cartCount">0</span></button>
 </header>
+
 <main class="container">
+  <section class="hero-shop">
+    <h2>¿Qué deseas pedir?</h2>
+    <p>Selecciona una categoría o busca un producto.</p>
+  </section>
+
   <section class="controls">
-    <input id="search" type="search" placeholder="Buscar producto...">
+    <input id="search" type="search" placeholder="Buscar producto por nombre...">
     <select id="category"><option value="">Todas las categorías</option></select>
   </section>
-  <p class="note">El catálogo no muestra precios. La disponibilidad final se confirma por WhatsApp.</p>
+
+  <section id="categoryGrid" class="category-grid"></section>
+
+  <div class="section-title">
+    <h2 id="productsTitle">Todos los productos</h2>
+    <button id="showFavorites" class="favorite-filter">♡ Favoritos</button>
+  </div>
+
+  <p class="note">No se muestran precios. La disponibilidad y el total se confirman por WhatsApp.</p>
   <section id="productGrid" class="grid"></section>
+
+  <section id="suggestionsSection" class="suggestions hidden">
+    <h2>También podrías necesitar</h2>
+    <div id="suggestionsGrid" class="grid compact"></div>
+  </section>
 </main>
+
 <button id="floatingCart" class="floating-cart">🛒 Ver pedido <span id="floatingCount">0</span></button>
+
 <dialog id="cartModal">
   <div class="modal-head">
     <div><h2>Tu pedido</h2><small>Sin precios</small></div>
@@ -32,12 +56,14 @@
     <label><input type="radio" name="entrega" value="Delivery" checked> Delivery</label>
     <label><input type="radio" name="entrega" value="Recojo en tienda"> Recojo en tienda</label>
   </div>
+  <input id="customerName" class="customer-input" placeholder="Nombre del cliente">
   <textarea id="notes" placeholder="Dirección, referencia o indicaciones..."></textarea>
   <div class="cart-actions">
     <button id="clearCart" class="secondary">Vaciar carrito</button>
     <button id="sendWhatsapp" class="primary">Enviar pedido por WhatsApp</button>
   </div>
 </dialog>
+
 <div id="toast"></div>
 <script src="js/productos.js"></script>
 <script src="js/tienda.js"></script>
