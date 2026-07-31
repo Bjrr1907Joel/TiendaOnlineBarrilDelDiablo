@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Pagos, delivery, ubicación, redes sociales y carta de tragos de El Barril del Diablo.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/animaciones.css">
+  <title>El Barril del Diablo</title>
+</head>
+<body>
+  <main class="app">
+    <section class="shell">
+      <header class="hero">
+        <img src="img/logo.png" alt="Logo de El Barril del Diablo">
+        <div class="thank">GRACIAS POR TU COMPRA</div>
+      </header>
+
+      <div class="content">
+        <h1>REALIZA TU PAGO</h1>
+
+        <div class="qr">
+          <img src="img/qr_pago.jpeg" alt="Código QR de pago de Corporación Vásquez">
+        </div>
+
+        <div class="owner">Titular: <b>CORPORACIÓN VÁSQUEZ</b></div>
+
+        <section class="payments">
+          <button class="pay yape" id="btnYape">
+            <img src="img/yape.png" alt="Yape">
+            <span>
+              <small>PAGAR CON</small>
+              <strong>YAPE</strong>
+              <span class="num">956 589 548</span>
+            </span>
+            <span class="arrow">›</span>
+          </button>
+
+          <button class="pay plin" id="btnPlin">
+            <img src="img/plin.png" alt="Plin">
+            <span>
+              <small>PAGAR CON</small>
+              <strong>PLIN</strong>
+              <span class="num">942 180 159</span>
+            </span>
+            <span class="arrow">›</span>
+          </button>
+        </section>
+
+        <section class="quick">
+          <a href="https://wa.me/51942180159?text=Hola%20El%20Barril%20del%20Diablo%2C%20deseo%20realizar%20un%20pedido."
+             target="_blank" rel="noopener">
+            <span class="icon">🛵</span>
+            REALIZAR UN PEDIDO
+            <small>Delivery</small>
+          </a>
+
+          <a href="https://maps.app.goo.gl/vh8eJjNkHjBjdDRs6"
+             target="_blank" rel="noopener">
+            <span class="icon">📍</span>
+            CÓMO LLEGAR
+            <small>Google Maps</small>
+          </a>
+
+          <button id="btnRedes">
+            <span class="icon">📱</span>
+            REDES SOCIALES
+            <small>Instagram · TikTok · Facebook</small>
+          </button>
+        </section>
+
+        
+        <a class="menu-button shop-link" href="tienda.html">
+          🛒 VER PRODUCTOS Y ARMAR PEDIDO
+        </a>
+
+        <button class="menu-button" id="btnTragos">
+          🍸 TRAGOS DEL BARMAN DIABLO
+        </button>
+
+        <section class="contacts">
+          <h2>CONTÁCTANOS</h2>
+          <div class="numbers">
+            <a href="tel:+51942180159">942 180 159</a>
+            <span>|</span>
+            <a href="tel:+51956589548">956 589 548</a>
+          </div>
+        </section>
+
+        <div class="notice">
+          Antes de confirmar el pago, verifica que aparezca el nombre
+          <b>CORPORACIÓN VÁSQUEZ</b>
+        </div>
+
+        <div class="thanks">¡Gracias por preferirnos!</div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modalRedes">
+    <div class="modal-head">
+      <h3>Síguenos en redes</h3>
+      <button class="close" data-close="modalRedes">×</button>
+    </div>
+    <div class="modal-body socials">
+      <a href="https://www.instagram.com/barrildel?igsh=MXVsODB1dWs5emJibA==" target="_blank" rel="noopener">📸 Instagram</a>
+      <a href="https://www.tiktok.com/@elbarrildeldiablo_?_r=1&_t=ZS-98Eck5xJgUi" target="_blank" rel="noopener">🎵 TikTok</a>
+      <a href="https://www.facebook.com/share/18w77YGYcs/" target="_blank" rel="noopener">🔵 Facebook</a>
+    </div>
+  </dialog>
+
+  <dialog id="modalTragos">
+    <div class="modal-head">
+      <h3>🍸 Tragos del Barman Diablo</h3>
+      <button class="close" data-close="modalTragos">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="drink-grid" id="drinkGrid"></div>
+    </div>
+  </dialog>
+
+  <dialog id="modalPlin">
+    <div class="modal-head">
+      <h3>Pagar con Plin</h3>
+      <button class="close" data-close="modalPlin">×</button>
+    </div>
+    <div class="modal-body">
+      <p>Se copiará el número <b>942 180 159</b> antes de intentar abrir BBVA.</p>
+      <button class="action bbva" id="btnBBVA">Abrir aplicación BBVA</button>
+      <button class="action copy" id="btnCopiarPlin">Copiar número Plin</button>
+    </div>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/tragos.js"></script>
+  <script src="js/pagos.js"></script>
+  <script src="js/redes.js"></script>
+  <script src="js/delivery.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

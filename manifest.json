@@ -1,0 +1,9 @@
+{
+  "name": "El Barril del Diablo",
+  "short_name": "Barril Diablo",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "description": "Pagos, delivery, ubicación, redes sociales y carta de tragos."
+}

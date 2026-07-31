@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>Productos | El Barril del Diablo</title>
+  <link rel="stylesheet" href="css/tienda.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="back">‹ Volver</a>
+  <div><h1>EL BARRIL DEL DIABLO</h1><p>Selecciona productos para tu pedido</p></div>
+  <button id="openCart" class="cart-button">🛒 <span id="cartCount">0</span></button>
+</header>
+<main class="container">
+  <section class="controls">
+    <input id="search" type="search" placeholder="Buscar producto...">
+    <select id="category"><option value="">Todas las categorías</option></select>
+  </section>
+  <p class="note">El catálogo no muestra precios. La disponibilidad final se confirma por WhatsApp.</p>
+  <section id="productGrid" class="grid"></section>
+</main>
+<button id="floatingCart" class="floating-cart">🛒 Ver pedido <span id="floatingCount">0</span></button>
+<dialog id="cartModal">
+  <div class="modal-head">
+    <div><h2>Tu pedido</h2><small>Sin precios</small></div>
+    <button id="closeCart" class="close">×</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="delivery-options">
+    <label><input type="radio" name="entrega" value="Delivery" checked> Delivery</label>
+    <label><input type="radio" name="entrega" value="Recojo en tienda"> Recojo en tienda</label>
+  </div>
+  <textarea id="notes" placeholder="Dirección, referencia o indicaciones..."></textarea>
+  <div class="cart-actions">
+    <button id="clearCart" class="secondary">Vaciar carrito</button>
+    <button id="sendWhatsapp" class="primary">Enviar pedido por WhatsApp</button>
+  </div>
+</dialog>
+<div id="toast"></div>
+<script src="js/productos.js"></script>
+<script src="js/tienda.js"></script>
+</body>
+</html>
