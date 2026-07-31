@@ -1,0 +1,26 @@
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.18;
+  background-image:radial-gradient(#ff5a36 1px,transparent 1px);
+  background-size:42px 42px;
+  animation:embers 12s linear infinite;
+}
+@keyframes embers{
+  from{background-position:0 120px}
+  to{background-position:40px -120px}
+}
+.pay,.quick button,.quick a,.menu-button{
+  transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+}
+.pay:hover,.quick button:hover,.quick a:hover,.menu-button:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.08);
+  box-shadow:0 10px 25px rgba(0,0,0,.32);
+}
+.pay:active,.quick button:active,.quick a:active,.menu-button:active{
+  transform:scale(.98);
+}
